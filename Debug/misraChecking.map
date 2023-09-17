@@ -1,0 +1,465 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.7                     
+******************************************************************************
+>> Linked Sun Sep 17 20:03:01 2023
+
+OUTPUT FILE NAME:   <misraChecking.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00002d7c
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  RAM                   00000020   ffffffe0  0000375c  ffffc884  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000020    00000020    00002eac   00002eac    r-x
+  00000020    00000020    00002eac   00002eac    r-x .text
+00002ecc    00002ecc    00000068   00000000    rw-
+  00002ecc    00002ecc    00000038   00000000    rw- .bss
+  00002f04    00002f04    00000030   00000000    rw- .data
+00002f38    00002f38    00000800   00000000    rw-
+  00002f38    00002f38    00000800   00000000    rw- .stack
+00003738    00003738    00000048   00000048    r--
+  00003738    00003738    00000048   00000048    r-- .cinit
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text      0    00000020    00002eac     
+                  00000020    00000730     LCD_program.obj (.text)
+                  00000750    00000684     DIO.obj (.text)
+                  00000dd4    00000420     ADC.obj (.text)
+                  000011f4    000003c4     GPTM.obj (.text)
+                  000015b8    00000268     motor.obj (.text)
+                  00001820    0000024c     os.obj (.text)
+                  00001a6c    00000234     rtsv4_A_be_eabi.lib : fd_add32.asm.obj (.text)
+                  00001ca0    000001f4     GPIO_program.obj (.text)
+                  00001e94    000001e8     tasks.obj (.text)
+                  0000207c    000001c0     PWM.obj (.text)
+                  0000223c    000001a4     rtsv4_A_be_eabi.lib : fd_div32.asm.obj (.text)
+                  000023e0    000001a0                         : memcpy32.asm.obj (.text)
+                  00002580    0000013c                         : fd_mul32.asm.obj (.text)
+                  000026bc    000000f0                         : u_div32.asm.obj (.text)
+                  000027ac    000000e8                         : fs_div32.asm.obj (.text)
+                  00002894    000000bc                         : fs_mul32.asm.obj (.text)
+                  00002950    000000b4     systick.obj (.text)
+                  00002a04    000000a0     rtsv4_A_be_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00002aa4    0000009c                         : fd_tos32.asm.obj (.text)
+                  00002b40    0000007c     ultrasonic.obj (.text)
+                  00002bbc    00000068     rtsv4_A_be_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00002c24    00000064                         : fd_tou32.asm.obj (.text)
+                  00002c88    0000005c                         : fs_tou32.asm.obj (.text)
+                  00002ce4    00000058                         : fs_toi32.asm.obj (.text)
+                  00002d3c    00000040     main.obj (.text)
+                  00002d7c    0000003c     rtsv4_A_be_eabi.lib : boot_non_cortex_m.asm.obj (.text)
+                  00002db8    00000034                         : u_tofd32.asm.obj (.text)
+                  00002dec    0000002c     LDR.obj (.text)
+                  00002e18    00000028     rtsv4_A_be_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00002e40    00000024     temp_sensor.obj (.text)
+                  00002e64    00000020     rtsv4_A_be_eabi.lib : args_main.c.obj (.text:_args_main)
+                  00002e84    0000001c     hal.obj (.text)
+                  00002ea0    00000014     rtsv4_A_be_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00002eb4    00000008                         : pre_init.c.obj (.text:_system_pre_init)
+                  00002ebc    00000008                         : exit.c.obj (.text:abort:abort)
+                  00002ec4    00000004                         : mpu_init.c.obj (.text:__mpu_init)
+                  00002ec8    00000004                         : div0.asm.obj (.text)
+
+.bss       0    00002ecc    00000038     UNINITIALIZED
+                  00002ecc    00000018     (.common:tasks)
+                  00002ee4    00000008     GPTM.obj (.bss)
+                  00002eec    00000004     LCD_program.obj (.bss:dataPins)
+                  00002ef0    00000004     LCD_program.obj (.bss:dataPorts)
+                  00002ef4    00000004     (.common:ldr1_buffer)
+                  00002ef8    00000004     (.common:ldr2_buffer)
+                  00002efc    00000004     (.common:ldr_diff)
+                  00002f00    00000004     (.common:ts_buffer)
+
+.data      0    00002f04    00000030     UNINITIALIZED
+                  00002f04    0000000e     LCD_program.obj (.data)
+                  00002f12    00000002     DIO.obj (.data)
+                  00002f14    0000000c     GPTM.obj (.data)
+                  00002f20    00000009     os.obj (.data)
+                  00002f29    00000002     tasks.obj (.data)
+                  00002f2b    00000001     --HOLE--
+                  00002f2c    00000004     ADC.obj (.data)
+                  00002f30    00000004     systick.obj (.data)
+
+.cinit     0    00003738    00000048     
+                  00003738    00000022     (.cinit..data.load) [load image, compression = lzss]
+                  0000375a    00000002     --HOLE-- [fill = 0]
+                  0000375c    0000000c     (__TI_handler_table)
+                  00003768    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00003770    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000020    00000000     UNINITIALIZED
+
+__llvm_prf_cnts 
+*          0    00000020    00000000     UNINITIALIZED
+
+.stack     0    00002f38    00000800     UNINITIALIZED
+                  00002f38    00000800     --HOLE--
+
+MODULE SUMMARY
+
+       Module                       code    ro data   rw data
+       ------                       ----    -------   -------
+    .\
+       main.obj                     64      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       64      0         0      
+                                                             
+    .\APP\
+       tasks.obj                    488     0         6      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       488     0         6      
+                                                             
+    .\HAL\
+       motor.obj                    616     0         0      
+       ultrasonic.obj               124     0         0      
+       LDR.obj                      44      0         0      
+       temp_sensor.obj              36      0         0      
+       hal.obj                      28      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       848     0         0      
+                                                             
+    .\HAL\LCD\
+       LCD_program.obj              1840    0         22     
+    +--+----------------------------+-------+---------+---------+
+       Total:                       1840    0         22     
+                                                             
+    .\MCAL\
+       DIO.obj                      1668    0         2      
+       ADC.obj                      1056    0         16     
+       GPTM.obj                     964     0         20     
+       PWM.obj                      448     0         0      
+       systick.obj                  180     0         4      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       4316    0         42     
+                                                             
+    .\MCAL\GPIO\
+       GPIO_program.obj             500     0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       500     0         0      
+                                                             
+    .\OS\
+       os.obj                       588     0         33     
+    +--+----------------------------+-------+---------+---------+
+       Total:                       588     0         33     
+                                                             
+    C:\ti\ccs1230\ccs\tools\compiler\ti-cgt-arm_20.2.7.LTS\lib\rtsv4_A_be_eabi.lib
+       fd_add32.asm.obj             564     0         0      
+       fd_div32.asm.obj             420     0         0      
+       memcpy32.asm.obj             416     0         0      
+       fd_mul32.asm.obj             316     0         0      
+       u_div32.asm.obj              240     0         0      
+       fs_div32.asm.obj             232     0         0      
+       fs_mul32.asm.obj             188     0         0      
+       copy_decompress_lzss.c.obj   160     0         0      
+       fd_tos32.asm.obj             156     0         0      
+       autoinit.c.obj               104     0         0      
+       fd_tou32.asm.obj             100     0         0      
+       fs_tou32.asm.obj             92      0         0      
+       fs_toi32.asm.obj             88      0         0      
+       boot_non_cortex_m.asm.obj    60      0         0      
+       u_tofd32.asm.obj             52      0         0      
+       copy_zero_init.c.obj         40      0         0      
+       args_main.c.obj              32      0         0      
+       copy_decompress_none.c.obj   20      0         0      
+       exit.c.obj                   8       0         0      
+       pre_init.c.obj               8       0         0      
+       div0.asm.obj                 4       0         0      
+       mpu_init.c.obj               4       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       3304    0         0      
+                                                             
+       Stack:                       0       0         2048   
+       Linker Generated:            0       70        0      
+    +--+----------------------------+-------+---------+---------+
+       Grand Total:                 11948   70        2151   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00003770 records: 2, size/record: 8, table size: 16
+	.data: load addr=00003738, load size=00000022 bytes, run addr=00002f04, run size=00000030 bytes, compression=lzss
+	.bss: load addr=00003768, load size=00000008 bytes, run addr=00002ecc, run size=00000038 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0000375c records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00000e68  ADC_INIT                      
+00002ebc  C$$EXIT                       
+000009d4  DIO_EnablePortInterrupt       
+00000750  DIO_Init                      
+00000af4  DIO_PortEdgeInterrupt         
+00000a60  DIO_PortLevelInterrupt        
+00000864  DIO_ReadPin                   
+00000840  DIO_ReadPort                  
+000008d0  DIO_SetPinDirection           
+00000964  DIO_SetPortControlMode        
+00000898  DIO_SetPortDirection          
+000007d8  DIO_WritePin                  
+000007b4  DIO_WritePort                 
+00000be4  DIO_switches_handler          
+00000c68  DIO_switches_init             
+00001ca0  GPIO_Init_Port                
+00001d9c  GPIO_Read_Pins                
+00001df0  GPIO_Write_Pins               
+000013c4  GPTM_WTIMER1_oneShot_init     
+000014d0  GPTM_WTIMER4_periodic_init    
+00001468  GPTM_delay_ms                 
+00001404  GPTM_delay_us                 
+000012d8  GPTM_ipEdgeTimeCaptureHandler 
+000011f4  GPTM_ipEdgeTimeCapture_init   
+00002e04  Get_LDRReads                  
+00000644  LCDSendInt                    
+00000f40  LDR1_ADC_GETDATA              
+00000e88  LDR1_ADC_INIT                 
+00001028  LDR2_ADC_GETDATA              
+00000f84  LDR2_ADC_INIT                 
+00002dec  LDR_INIT                      
+000004fc  LcdGoTo                       
+00000020  LcdInit                       
+00000528  LcdSaveCustomChar             
+000002f8  LcdSendCommand                
+000001b8  LcdSendData                   
+00000428  LcdSendString                 
+00002e84  MCAL_init                     
+00001850  OS_tickTime                   
+0000207c  PWM_Init                      
+000029b4  SysTick_SetCallBack           
+000029d0  SysTick_Stop                  
+000029e0  SysTick_resume                
+00002f2c  TEMP                          
+000010e0  TS_ADC_GETDATA                
+0000106c  TS_ADC_INIT                   
+00002e40  Temp_sensorInit               
+00002e54  Temp_sensorRead               
+00003738  __STACK_END                   
+00000800  __STACK_SIZE                  
+00003770  __TI_CINIT_Base               
+00003780  __TI_CINIT_Limit              
+0000375c  __TI_Handler_Table_Base       
+00003768  __TI_Handler_Table_Limit      
+00002bbc  __TI_auto_init_nobinit_nopinit
+00002a04  __TI_decompress_lzss          
+00002ea0  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00003738  __TI_static_base__            
+00002e18  __TI_zero_init_nomemset       
+00002aa4  __aeabi_d2f                   
+00002c24  __aeabi_d2uiz                 
+00001a78  __aeabi_dadd                  
+0000223c  __aeabi_ddiv                  
+00002580  __aeabi_dmul                  
+00001a6c  __aeabi_dsub                  
+00002ce4  __aeabi_f2iz                  
+00002c88  __aeabi_f2uiz                 
+000027ac  __aeabi_fdiv                  
+00002894  __aeabi_fmul                  
+00002ec8  __aeabi_idiv0                 
+00002ec8  __aeabi_ldiv0                 
+000023e0  __aeabi_memcpy                
+000023e0  __aeabi_memcpy4               
+000023e0  __aeabi_memcpy8               
+00002db8  __aeabi_ui2d                  
+000026bc  __aeabi_uidiv                 
+000026bc  __aeabi_uidivmod              
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+00002ec4  __mpu_init                    
+00002f38  __stack                       
+00000020  __start___llvm_prf_cnts       
+00000020  __stop___llvm_prf_cnts        
+00002e64  _args_main                    
+00002d7c  _c_int00                      
+UNDEFED   _system_post_cinit            
+00002eb4  _system_pre_init              
+00002ebc  abort                         
+00001f74  avoid_obstacles               
+ffffffff  binit                         
+00000dd4  configurePLL                  
+00001870  create_task                   
+00002f29  current_state                 
+00002f1c  distance                      
+00002f24  g_currentTime_ms              
+00002f14  g_intEdge                     
+00002f28  g_systick_newTick_flag        
+00001f08  lcd_display                   
+00002ef4  ldr1_buffer                   
+00002ef8  ldr2_buffer                   
+00002efc  ldr_diff                      
+00001e94  ldr_swing_car                 
+00002d3c  main                          
+000023e0  memcpy                        
+000015b8  motorControl_init             
+000017cc  motor_brakes                  
+000016e8  motor_moveBackward            
+0000169c  motor_moveForward             
+00001780  motor_moveLeft                
+00001734  motor_moveRight               
+00001820  scheduler_init                
+00002f12  switch0_flag                  
+00002f13  switch4_flag                  
+00002988  systick_handler               
+00002950  systick_init                  
+00002ecc  tasks                         
+000018d0  tasks_scheduler               
+00002f18  total_time                    
+00002f00  ts_buffer                     
+00002b84  ultrasonicTrigger             
+00002b40  ultrasonic_init               
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000020  LcdInit                       
+00000020  __start___llvm_prf_cnts       
+00000020  __stop___llvm_prf_cnts        
+000001b8  LcdSendData                   
+000002f8  LcdSendCommand                
+00000428  LcdSendString                 
+000004fc  LcdGoTo                       
+00000528  LcdSaveCustomChar             
+00000644  LCDSendInt                    
+00000750  DIO_Init                      
+000007b4  DIO_WritePort                 
+000007d8  DIO_WritePin                  
+00000800  __STACK_SIZE                  
+00000840  DIO_ReadPort                  
+00000864  DIO_ReadPin                   
+00000898  DIO_SetPortDirection          
+000008d0  DIO_SetPinDirection           
+00000964  DIO_SetPortControlMode        
+000009d4  DIO_EnablePortInterrupt       
+00000a60  DIO_PortLevelInterrupt        
+00000af4  DIO_PortEdgeInterrupt         
+00000be4  DIO_switches_handler          
+00000c68  DIO_switches_init             
+00000dd4  configurePLL                  
+00000e68  ADC_INIT                      
+00000e88  LDR1_ADC_INIT                 
+00000f40  LDR1_ADC_GETDATA              
+00000f84  LDR2_ADC_INIT                 
+00001028  LDR2_ADC_GETDATA              
+0000106c  TS_ADC_INIT                   
+000010e0  TS_ADC_GETDATA                
+000011f4  GPTM_ipEdgeTimeCapture_init   
+000012d8  GPTM_ipEdgeTimeCaptureHandler 
+000013c4  GPTM_WTIMER1_oneShot_init     
+00001404  GPTM_delay_us                 
+00001468  GPTM_delay_ms                 
+000014d0  GPTM_WTIMER4_periodic_init    
+000015b8  motorControl_init             
+0000169c  motor_moveForward             
+000016e8  motor_moveBackward            
+00001734  motor_moveRight               
+00001780  motor_moveLeft                
+000017cc  motor_brakes                  
+00001820  scheduler_init                
+00001850  OS_tickTime                   
+00001870  create_task                   
+000018d0  tasks_scheduler               
+00001a6c  __aeabi_dsub                  
+00001a78  __aeabi_dadd                  
+00001ca0  GPIO_Init_Port                
+00001d9c  GPIO_Read_Pins                
+00001df0  GPIO_Write_Pins               
+00001e94  ldr_swing_car                 
+00001f08  lcd_display                   
+00001f74  avoid_obstacles               
+0000207c  PWM_Init                      
+0000223c  __aeabi_ddiv                  
+000023e0  __aeabi_memcpy                
+000023e0  __aeabi_memcpy4               
+000023e0  __aeabi_memcpy8               
+000023e0  memcpy                        
+00002580  __aeabi_dmul                  
+000026bc  __aeabi_uidiv                 
+000026bc  __aeabi_uidivmod              
+000027ac  __aeabi_fdiv                  
+00002894  __aeabi_fmul                  
+00002950  systick_init                  
+00002988  systick_handler               
+000029b4  SysTick_SetCallBack           
+000029d0  SysTick_Stop                  
+000029e0  SysTick_resume                
+00002a04  __TI_decompress_lzss          
+00002aa4  __aeabi_d2f                   
+00002b40  ultrasonic_init               
+00002b84  ultrasonicTrigger             
+00002bbc  __TI_auto_init_nobinit_nopinit
+00002c24  __aeabi_d2uiz                 
+00002c88  __aeabi_f2uiz                 
+00002ce4  __aeabi_f2iz                  
+00002d3c  main                          
+00002d7c  _c_int00                      
+00002db8  __aeabi_ui2d                  
+00002dec  LDR_INIT                      
+00002e04  Get_LDRReads                  
+00002e18  __TI_zero_init_nomemset       
+00002e40  Temp_sensorInit               
+00002e54  Temp_sensorRead               
+00002e64  _args_main                    
+00002e84  MCAL_init                     
+00002ea0  __TI_decompress_none          
+00002eb4  _system_pre_init              
+00002ebc  C$$EXIT                       
+00002ebc  abort                         
+00002ec4  __mpu_init                    
+00002ec8  __aeabi_idiv0                 
+00002ec8  __aeabi_ldiv0                 
+00002ecc  tasks                         
+00002ef4  ldr1_buffer                   
+00002ef8  ldr2_buffer                   
+00002efc  ldr_diff                      
+00002f00  ts_buffer                     
+00002f12  switch0_flag                  
+00002f13  switch4_flag                  
+00002f14  g_intEdge                     
+00002f18  total_time                    
+00002f1c  distance                      
+00002f24  g_currentTime_ms              
+00002f28  g_systick_newTick_flag        
+00002f29  current_state                 
+00002f2c  TEMP                          
+00002f38  __stack                       
+00003738  __STACK_END                   
+00003738  __TI_static_base__            
+0000375c  __TI_Handler_Table_Base       
+00003768  __TI_Handler_Table_Limit      
+00003770  __TI_CINIT_Base               
+00003780  __TI_CINIT_Limit              
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   _system_post_cinit            
+
+[124 symbols]
